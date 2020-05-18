@@ -5,8 +5,17 @@
 type Resolution {
   _id: String!
   name: String!
+  goals: [Goal]
+  completed: Boolean
 }
 
 type Mutation {
   createResolution(name: String!): Resolution
+  deleteResolution(_id: String!): Resolution
 }
+
+type Query {
+  hi: String
+  resolutions: [Resolution]
+}
+
